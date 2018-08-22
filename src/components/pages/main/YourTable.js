@@ -2,77 +2,32 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
-export default class PoolTable extends Component {
+export default class YourTable extends Component {
 	render() {
 		return (
 			<ReactTable 
 				data={[{
-					name: 'First Lobby',
+					name: 'My Lobby 1',
 					entry: 10,
 					people: 34,
 				},{
-					name: ':)',
+					name: 'My Lobby 2',
 					entry: 100,
 					people: 53,
 				},{
-					name: 'Friends',
+					name: 'My Lobby 3',
 					entry: 100,
 					people: 100,
 				},{
-					name: '$$$$$$$',
+					name: 'My Lobby 4',
 					entry: 1000,
 					people: 89,
-				},{
-					name: 'Low Rollers',
-					entry: 1,
-					people: 5,
-				},{
-					name: 'First Lobby',
-					entry: 10,
-					people: 34,
-				},{
-					name: ':)',
-					entry: 100,
-					people: 53,
-				},{
-					name: 'Friends',
-					entry: 100,
-					people: 100,
-				},{
-					name: '$$$$$$$',
-					entry: 1000,
-					people: 89,
-				},{
-					name: 'Low Rollers',
-					entry: 1,
-					people: 5,
-				},{
-					name: 'First Lobby',
-					entry: 10,
-					people: 34,
-				},{
-					name: ':)',
-					entry: 100,
-					people: 53,
-				},{
-					name: 'Friends',
-					entry: 100,
-					people: 100,
-				},{
-					name: '$$$$$$$',
-					entry: 1000,
-					people: 89,
-				},{
-					name: 'Low Rollers',
-					entry: 1,
-					people: 5,
 				}]}
 				columns={[
             {
               Header: 'Name',
               id: 'name',
               accessor: d => d.name,
-              filterable: false,
             },
             {
               Header: 'Entry',
@@ -106,22 +61,23 @@ export default class PoolTable extends Component {
 						      </div>
 					      );
               },
-              filterMethod: (filter, row, column) => parseInt(filter.value) === row.entry,
             },
             {
-              Header: '# People',
+              Header: 'People Remaining',
               id: 'people',
               accessor: d => `${d.people}/100`,
-              filterable: false,
             },
             {
               Header: 'Pot',
               id: 'pot',
-              accessor: d => d.entry * d.people,
-              filterable: false,
+              accessor: d => d.entry * 100,
+            },
+            {
+              Header: 'Possible Winnings',
+              id: 'winnings',
+              accessor: d => Math.floor((d.entry * 100) / d.people),
             }
           ]}
-          filterable={true}
           defaultPageSize={10}
           className='-striped -highlight'
           loadingText='Finding Open Lobbies...'
