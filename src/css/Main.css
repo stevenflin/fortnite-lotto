@@ -3,6 +3,12 @@
 	outline: 0;
 }
 
+@font-face {
+   font-family: Burbank;
+   src: url("../public/Burbank_Big_Condensed_Black.ttf");
+   color: white;
+}
+
 #mini-profile {
 	border: 1px solid #e8e8e8;
 	text-align: center;
@@ -54,4 +60,18 @@
 
 .react-tabs__tab-panel--selected {
   display: block;
+}
+
+#nav-bar {
+  background-color: rgb(1,9,30);
+  height: 60px;
+}
+
+#nav-span {
+	font-size: 2em;
+	margin: 20px;
+}
+
+.landLogo {
+	height: 50px;
 }
