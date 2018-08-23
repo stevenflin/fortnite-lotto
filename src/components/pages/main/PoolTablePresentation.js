@@ -1,72 +1,16 @@
-import React, { Component } from 'react';
-import ReactTable from 'react-table';
+import React, { Component } from 'react';import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
-export default class PoolTable extends Component {
+export default class PoolTablePresentation extends Component {
+
+	componentDidMount() {
+		this.props.fetchPools();
+	}
+
 	render() {
 		return (
 			<ReactTable
-				data={[{
-					name: 'First Lobby',
-					entry: 10,
-					people: 34,
-				},{
-					name: ':)',
-					entry: 100,
-					people: 53,
-				},{
-					name: 'Friends',
-					entry: 100,
-					people: 100,
-				},{
-					name: '$$$$$$$',
-					entry: 1000,
-					people: 89,
-				},{
-					name: 'Low Rollers',
-					entry: 1,
-					people: 5,
-				},{
-					name: 'First Lobby',
-					entry: 10,
-					people: 34,
-				},{
-					name: ':)',
-					entry: 100,
-					people: 53,
-				},{
-					name: 'Friends',
-					entry: 100,
-					people: 100,
-				},{
-					name: '$$$$$$$',
-					entry: 1000,
-					people: 89,
-				},{
-					name: 'Low Rollers',
-					entry: 1,
-					people: 5,
-				},{
-					name: 'First Lobby',
-					entry: 10,
-					people: 34,
-				},{
-					name: ':)',
-					entry: 100,
-					people: 53,
-				},{
-					name: 'Friends',
-					entry: 100,
-					people: 100,
-				},{
-					name: '$$$$$$$',
-					entry: 1000,
-					people: 89,
-				},{
-					name: 'Low Rollers',
-					entry: 1,
-					people: 5,
-				}]}
+				data={this.props.pools}
 				columns={[
             {
               Header: 'Name',
@@ -113,13 +57,13 @@ export default class PoolTable extends Component {
             {
               Header: '# People',
               id: 'people',
-              accessor: d => `${d.people}/100`,
+              accessor: d => `${d.participants.length}/100`,
               filterable: false,
             },
             {
               Header: 'Pot',
               id: 'pot',
-              accessor: d => d.entry * d.people,
+              accessor: d => d.entry * d.participants.length,
               filterable: false,
             }
           ]}
@@ -127,7 +71,7 @@ export default class PoolTable extends Component {
           defaultPageSize={10}
           className='-striped -highlight'
           loadingText='Finding Open Lobbies...'
-          noDataText='No Open Lobbies'
+          noDataText={this.props.errorFetchingPools ? 'There was a problem loading lobbies': 'No Open Lobbies'}
 					id="maintable"
 			/>
 		);

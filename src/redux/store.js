@@ -1,5 +1,11 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
-const reducer = combineReducers({});
+import pools from './reducers/poolsReducer';
 
-export default createStore(reducer);
+const reducer = combineReducers({
+	pools,
+});
+
+export default createStore(reducer, applyMiddleware(thunk, logger));

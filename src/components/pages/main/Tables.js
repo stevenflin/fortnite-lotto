@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import PoolTable from './PoolTable';
+import PoolTable from './PoolTableContainer';
 import YourTable from './YourTable';
 
 export default class Tables extends Component {
