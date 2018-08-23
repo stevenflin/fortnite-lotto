@@ -5,7 +5,7 @@ import 'react-table/react-table.css';
 export default class YourTable extends Component {
 	render() {
 		return (
-			<ReactTable 
+			<ReactTable
 				data={[{
 					name: 'My Lobby 1',
 					entry: 10,
@@ -48,6 +48,8 @@ export default class YourTable extends Component {
               		case 1000:
               			color = 'gold';
               			break;
+									default:
+										return;
               	}
               	return (
               		<div

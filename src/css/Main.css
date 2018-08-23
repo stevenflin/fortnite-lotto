@@ -10,8 +10,12 @@
 }
 
 #mini-profile {
-	border: 1px solid #e8e8e8;
+	border: 3px solid #e8e8e8;
 	text-align: center;
+}
+
+#maintable {
+	border: 10px solid;
 }
 
 .react-tabs__tab-list {

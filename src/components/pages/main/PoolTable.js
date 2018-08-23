@@ -5,7 +5,7 @@ import 'react-table/react-table.css';
 export default class PoolTable extends Component {
 	render() {
 		return (
-			<ReactTable 
+			<ReactTable
 				data={[{
 					name: 'First Lobby',
 					entry: 10,
@@ -93,6 +93,8 @@ export default class PoolTable extends Component {
               		case 1000:
               			color = 'gold';
               			break;
+									default:
+										return;
               	}
               	return (
               		<div
@@ -126,6 +128,7 @@ export default class PoolTable extends Component {
           className='-striped -highlight'
           loadingText='Finding Open Lobbies...'
           noDataText='No Open Lobbies'
+					id="maintable"
 			/>
 		);
 	}
