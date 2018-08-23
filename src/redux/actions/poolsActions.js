@@ -6,9 +6,7 @@ export const fetchPoolsRequest = () => ({
 
 export const fetchPoolsSuccess = (pools) => ({
 	type: types.FETCH_POOLS_SUCCESS,
-	payload: {
-		pools,
-	},
+	payload: { pools },
 });
 
 export const fetchPoolsFailure = () => ({
