@@ -5,6 +5,7 @@ const initialState = {
 		modals: {
 			showViewModal: false,
 			showJoinModal: false,
+			showCreateModal: false,
 		},
 		activePool: {
 			name: ':)',

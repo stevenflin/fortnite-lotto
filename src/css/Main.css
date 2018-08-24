@@ -80,7 +80,7 @@
 	height: 50px;
 }
 
-.view-btn:hover, .join-btn:hover, .cancel-btn:hover, .confirm-btn {
+.view-btn:hover, .join-btn:hover, .cancel-btn:hover, .confirm-btn:hover, .new-pool-btn:hover {
   cursor: pointer;
 }
 
@@ -88,6 +88,18 @@
   border: 1px solid green;
   background-color: green;
   color: white;
+}
+
+.new-pool-btn {
+  border: 1px solid black;
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.new-pool-btn:hover {
+  color: white;
+  background-color: blue;
+  border-color: blue;
 }
 
 .view-btn, .join-btn {
@@ -115,4 +127,98 @@
 
 .pull-right {
   float: right;
+}
+
+.table-btns {
+  text-align: center;
+}
+
+.new-pool-field-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.name-field-input {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+input:focus {
+  outline: none;
+}
+
+.entry-btn {
+  display: inline-block;
+  margin: 5px;
+  padding: 0 10px;
+  width: 75px;
+  text-align: center;
+}
+
+.entry-btn:hover {
+  cursor: pointer;
+}
+
+#entry-btn-1 {
+  color: blue;
+  border: 1px solid blue;
+}
+
+#entry-btn-1-selected {
+  color: white;
+  border: 1px solid blue;
+  background-color: blue;
+}
+
+#entry-btn-1:hover {
+  color: white;
+  background-color: blue;
+}
+
+#entry-btn-10 {
+  color: green;
+  border: 1px solid green;
+}
+
+#entry-btn-10-selected {
+  color: white;
+  border: 1px solid green;
+  background-color: green;
+}
+
+#entry-btn-10:hover {
+  color: white;
+  background-color: green;
+}
+
+#entry-btn-100 {
+  color: purple;
+  border: 1px solid purple;
+}
+
+#entry-btn-100-selected {
+  color: white;
+  border: 1px solid purple;
+  background-color: purple;
+}
+
+#entry-btn-100:hover {
+  color: white;
+  background-color: purple;
+}
+
+#entry-btn-1000 {
+  color: gold;
+  border: 1px solid gold;
+}
+
+#entry-btn-1000-selected {
+  color: white;
+  border: 1px solid gold;
+  background-color: gold;
+}
+
+#entry-btn-1000:hover {
+  color: white;
+  background-color: gold;
 }
