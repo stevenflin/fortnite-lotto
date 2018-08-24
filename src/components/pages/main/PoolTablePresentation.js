@@ -1,9 +1,14 @@
-import React, { Component } from 'react';import ReactTable from 'react-table';
+import React, { Component } from 'react';
+import ReactTable from 'react-table';
+
 import 'react-table/react-table.css';
 
 import { generateColor } from '../../../helpers/colors';
 
-export default class PoolTablePresentation extends Component {
+import PoolTableButtons from './PoolTableButtonsContainer';
+import JoinModal from './JoinModalContainer';
+
+export default class PoolTable extends Component {
 
 	componentDidMount() {
 		this.props.fetchPools();
@@ -11,6 +16,8 @@ export default class PoolTablePresentation extends Component {
 
 	render() {
 		return (
+      <div>
+      <JoinModal />
 			<ReactTable
 				data={this.props.pools}
 				columns={[
@@ -25,13 +32,7 @@ export default class PoolTablePresentation extends Component {
             id: 'entry',
             accessor: d => d.entry,
             Cell: row => (
-          		<div
-				        style={{
-				          width: '100%',
-				          height: '100%',
-				          color: generateColor(row.value),
-				        }}
-				      >
+          		<div style={{color: generateColor(row.value)}}>
 				      	<strong>{row.value}</strong>
 				      </div>
 			      ),
@@ -48,6 +49,13 @@ export default class PoolTablePresentation extends Component {
             id: 'pot',
             accessor: d => d.entry * d.participants.length,
             filterable: false,
+          },
+          {
+            Header: '',
+            id: 'action',
+            filterable: false,
+            sortable: false,
+            Cell: row => <PoolTableButtons pool={row.original} />,
           }
         ]}
         filterable={true}
@@ -55,8 +63,9 @@ export default class PoolTablePresentation extends Component {
         className='-striped -highlight'
         loadingText='Finding Open Lobbies...'
         noDataText={this.props.errorFetchingPools ? 'There was a problem loading lobbies': 'No Open Lobbies'}
-				id="maintable"
+				id='maintable'
 			/>
+      </div>
 		);
 	}
 }

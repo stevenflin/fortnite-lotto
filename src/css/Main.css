@@ -79,3 +79,40 @@
 .landLogo {
 	height: 50px;
 }
+
+.view-btn:hover, .join-btn:hover, .cancel-btn:hover, .confirm-btn {
+  cursor: pointer;
+}
+
+.view-btn:hover, .join-btn:hover {
+  border: 1px solid green;
+  background-color: green;
+  color: white;
+}
+
+.view-btn, .join-btn {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 0 10px;
+  margin: 0 5px;
+}
+
+.cancel-btn {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 0 10px;
+  margin: 5px;
+}
+
+.confirm-btn {
+  display: inline-block;
+  border: 1px solid green;
+  background-color: green;
+  color: white;
+  padding: 0 10px;
+  margin: 5px;
+}
+
+.pull-right {
+  float: right;
+}
