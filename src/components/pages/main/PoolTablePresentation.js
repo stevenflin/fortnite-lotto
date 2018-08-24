@@ -6,7 +6,9 @@ import 'react-table/react-table.css';
 import { generateColor } from '../../../helpers/colors';
 
 import PoolTableButtons from './PoolTableButtonsContainer';
+import NewPoolButton from './NewPoolButtonContainer';
 import JoinModal from './JoinModalContainer';
+import CreateModal from './CreateModalContainer';
 
 export default class PoolTable extends Component {
 
@@ -18,6 +20,7 @@ export default class PoolTable extends Component {
 		return (
       <div>
       <JoinModal />
+      <CreateModal />
 			<ReactTable
 				data={this.props.pools}
 				columns={[
@@ -51,7 +54,7 @@ export default class PoolTable extends Component {
             filterable: false,
           },
           {
-            Header: '',
+            Header: () => <NewPoolButton />,
             id: 'action',
             filterable: false,
             sortable: false,

@@ -11,3 +11,12 @@ export const fetchPools = () => (
 		.catch(() => dispatch(actions.fetchPoolsFailure()));
 	}
 );
+
+export const createPool = (userId, pool) => (
+	dispatch => {
+		dispatch(actions.createPoolRequest());
+		return axios.post(`${process.env.REACT_APP_API_URL}/pools`, { userId, pool })
+		.then(() => dispatch(actions.createPoolSuccess()))
+		.catch(() => dispatch(actions.createPoolFailure()));
+	}
+);
