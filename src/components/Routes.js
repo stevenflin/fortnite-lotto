@@ -4,7 +4,7 @@ import { Router, Route } from 'react-router';
 import history from '../helpers/history';
 
 import Navbar from './Navbar';
-import Main from './pages/main';
+import MainPage from './pages/mainPage';
 
 export default class Routes extends Component {
   render() {
@@ -13,7 +13,7 @@ export default class Routes extends Component {
       	<Fragment>
       		<Navbar />
       		<div id='main'>
-        		<Route path='/' component={Main} />
+        		<Route path='/' component={MainPage} />
         	</div>
         </Fragment>
       </Router>

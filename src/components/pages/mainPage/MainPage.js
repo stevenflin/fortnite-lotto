@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { Col } from 'react-bootstrap';
 import '../../../css/Main.css';
 
-import Tables from './Tables';
-import MiniProfile from './MiniProfileContainer';
+import TableTabs from './tableTabs';
+import LeftSideBar from './leftSideBar';
+import Modals from './modals';
 
-export default class Main extends Component {
+export default class MainPage extends Component {
 
   componentDidMount() {
     this.props.fetchActiveUser();
@@ -14,11 +15,12 @@ export default class Main extends Component {
   render() {
     return (
       <div>
+        <Modals />
       	<Col md={3}>
-      		<MiniProfile />
+      		<LeftSideBar />
       	</Col>
       	<Col md={9}>
-        	<Tables />
+        	<TableTabs />
         </Col>
       </div>
     );

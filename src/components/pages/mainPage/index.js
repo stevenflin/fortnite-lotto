@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { fetchActiveUser } from '../../../redux/asyncActions/usersAsyncActions';
 
-import Main from './MainPresentation';
+import MainPage from './MainPage';
 
 const mapStateToProps = () => ({});
 
@@ -10,4 +10,4 @@ const mapDispatchToProps = dispatch => ({
   fetchActiveUser: () => dispatch(fetchActiveUser()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage);

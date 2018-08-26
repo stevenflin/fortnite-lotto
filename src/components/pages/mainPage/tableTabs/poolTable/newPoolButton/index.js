@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
-import NewPoolButton from './NewPoolButtonPresentation';
+import NewPoolButton from './NewPoolButton';
 
-import { toggleModal } from '../../../redux/actions/uiActions';
+import { toggleModal } from '../../../../../../redux/actions/uiActions';
 
 const mapStateToProps = state => ({
 

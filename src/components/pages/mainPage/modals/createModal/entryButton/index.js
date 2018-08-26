@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
-import EntryButton from './EntryButtonPresentation';
+import EntryButton from './EntryButton';
 
-import { handlePoolFieldChange } from '../../../redux/actions/poolsActions';
+import { handlePoolFieldChange } from '../../../../../../redux/actions/poolsActions';
 
 const mapStateToProps = (state, ownProps) => ({
 	isSelected: state.pools.pool.entry === ownProps.value,

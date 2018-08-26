@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
-import JoinModal from './JoinModalPresentation';
+import JoinModal from './JoinModal';
 
-import { toggleModal } from '../../../redux/actions/uiActions';
+import { toggleModal } from '../../../../../redux/actions/uiActions';
 
 const mapStateToProps = state => ({
 	isOpen: state.ui.main.modals.showJoinModal,

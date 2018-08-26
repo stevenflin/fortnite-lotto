@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 
-import CreateModal from './CreateModalPresentation';
+import CreateModal from './CreateModal';
 
-import { toggleModal } from '../../../redux/actions/uiActions';
-import { handlePoolFieldChange } from '../../../redux/actions/poolsActions';
-import { createPool } from '../../../redux/asyncActions/poolsAsyncActions';
+import { toggleModal } from '../../../../../redux/actions/uiActions';
+import { handlePoolFieldChange } from '../../../../../redux/actions/poolsActions';
+import { createPool } from '../../../../../redux/asyncActions/poolsAsyncActions';
 
 const mapStateToProps = state => ({
 	isOpen: state.ui.main.modals.showCreateModal,

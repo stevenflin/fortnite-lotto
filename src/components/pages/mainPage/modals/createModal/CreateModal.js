@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 
-import { generateColor } from '../../../helpers/colors';
-
-import EntryButton from './EntryButtonContainer';
+import EntryButton from './entryButton';
 
 Modal.setAppElement('#root');
 

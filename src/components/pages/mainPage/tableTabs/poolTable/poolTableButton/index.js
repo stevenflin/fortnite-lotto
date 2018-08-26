@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
-import PoolTableButtons from './PoolTableButtonsPresentation';
+import PoolTableButtons from './PoolTableButton';
 
-import { toggleModal, setModalData } from '../../../redux/actions/uiActions';
+import { toggleModal, setModalData } from '../../../../../../redux/actions/uiActions';
 
 const mapStateToProps = state => ({
 	showViewModal: state.ui.main.modals.showViewModal,

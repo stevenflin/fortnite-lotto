@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 
-import { generateColor } from '../../../helpers/colors';
+import { generateColor } from '../../../../../helpers/colors';
 
 Modal.setAppElement('#root');
 

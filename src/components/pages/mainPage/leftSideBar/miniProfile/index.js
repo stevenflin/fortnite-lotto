@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import MiniProfile from './MiniProfilePresentation';
+import MiniProfile from './MiniProfile';
 
 const mapStateToProps = state => ({
 	activeUser: state.users.activeUser,

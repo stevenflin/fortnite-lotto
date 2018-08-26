@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import PoolTable from './PoolTableContainer';
-import YourTable from './YourTable';
+import PoolTable from './poolTable';
+import YourTable from './yourTable';
 
-export default class Tables extends Component {
+export default class TableTabs extends Component {
 	render() {
 		return (
 		  <Tabs>
