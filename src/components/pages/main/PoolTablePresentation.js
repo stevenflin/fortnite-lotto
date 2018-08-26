@@ -28,7 +28,6 @@ export default class PoolTable extends Component {
             Header: 'Name',
             id: 'name',
             accessor: d => d.name,
-            filterable: false,
           },
           {
             Header: 'Entry',
