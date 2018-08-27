@@ -18,6 +18,24 @@
 	border: 10px solid;
 }
 
+#access-profile {
+	padding: 30px;
+	text-align: center;
+}
+
+#access-profile-buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#login-profile-button {
+	margin-right: 5px
+}
+
+#register-profile-button {
+	margin-left: 5px
+}
 .react-tabs__tab-list {
   margin: 0;
   padding: 0;

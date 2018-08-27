@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import * as actions from '../actions/poolsActions';
+import * as actions from '../actions/registerUserActions';
 
 export const fetchPools = () => (
 	dispatch => {
@@ -12,20 +12,11 @@ export const fetchPools = () => (
 	}
 );
 
-export const createPool = (userId, pool) => (
+export const createUser = (userId, pool) => (
 	dispatch => {
 		dispatch(actions.createPoolRequest());
 		return axios.post(`${process.env.REACT_APP_API_URL}/pools`, { userId, pool })
 		.then(() => dispatch(actions.createPoolSuccess()))
 		.catch(() => dispatch(actions.createPoolFailure()));
-	}
-);
-
-export const joinPool = (record) => (
-	dispatch => {
-		dispatch(actions.joinPoolRequest());
-		return axios.post(`${process.env.REACT_APP_API_URL}/records`, { record })
-		.then(() => dispatch(actions.joinPoolSuccess()))
-		.catch(() => dispatch(actions.joinPoolFailure()));
 	}
 );

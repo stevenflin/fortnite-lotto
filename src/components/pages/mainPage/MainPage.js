@@ -5,8 +5,13 @@ import '../../../css/Main.css';
 import TableTabs from './tableTabs';
 import LeftSideBar from './leftSideBar';
 import Modals from './modals';
+import AccessProfile from '../main/AccessPresentation';
 
 export default class MainPage extends Component {
+
+  constructor(props){
+    super(props);
+  }
 
   componentDidMount() {
     this.props.fetchActiveUser();
@@ -17,7 +22,8 @@ export default class MainPage extends Component {
       <div>
         <Modals />
       	<Col md={3}>
-      		<LeftSideBar />
+      		{/* <LeftSideBar /> */}
+      		<AccessProfile />
       	</Col>
       	<Col md={9}>
         	<TableTabs />
