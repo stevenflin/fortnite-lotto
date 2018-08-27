@@ -9,7 +9,7 @@ const initialState = {
 	pool: {
 		name: '',
 		entry: 1,
-		participants: [],
+		participants: 1,
 	},
 };
 

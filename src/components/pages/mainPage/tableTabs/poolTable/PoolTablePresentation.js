@@ -39,13 +39,13 @@ export default class PoolTable extends Component {
             {
               Header: '# People',
               id: 'people',
-              accessor: d => `${d.participants.length}/100`,
+              accessor: d => `${d.participants}/100`,
               filterable: false,
             },
             {
               Header: 'Pot',
               id: 'pot',
-              accessor: d => d.entry * d.participants.length,
+              accessor: d => d.entry * d.participants,
               filterable: false,
             },
             {

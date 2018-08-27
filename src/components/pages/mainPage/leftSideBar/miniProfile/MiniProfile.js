@@ -20,7 +20,7 @@ export default class MiniProfile extends Component {
 				</div>
 				<hr />
 				<div id='active-bets'>
-					{this.props.activeUser.activePools.length} Active Bets
+					{this.props.activeUser.activePools} Active Bets
 				</div>
 			</div>
 		);
