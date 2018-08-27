@@ -15,6 +15,13 @@ const style = {
 };
 
 export default class JoinModal extends Component {
+
+	joinPool = () => {
+		let userId = this.props.userId;
+		let poolId = this.props.pool._id;
+		this.props.joinPool({userId, poolId});
+	}
+
 	render() {
 		return (
 			<Modal
@@ -33,7 +40,7 @@ export default class JoinModal extends Component {
 					<div className='cancel-btn' onClick={this.props.closeModal}>
 	          CANCEL
 	        </div>
-	        <div className='confirm-btn' onClick={this.props.closeModal}>
+	        <div className='confirm-btn' onClick={this.joinPool}>
 	          CONFIRM
 	        </div>
         </div>

@@ -20,3 +20,12 @@ export const createPool = (userId, pool) => (
 		.catch(() => dispatch(actions.createPoolFailure()));
 	}
 );
+
+export const joinPool = (record) => (
+	dispatch => {
+		dispatch(actions.joinPoolRequest());
+		return axios.post(`${process.env.REACT_APP_API_URL}/records`, { record })
+		.then(() => dispatch(actions.joinPoolSuccess()))
+		.catch(() => dispatch(actions.joinPoolFailure()));
+	}
+);

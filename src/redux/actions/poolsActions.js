@@ -24,6 +24,17 @@ export const createPoolFailure = () => ({
 	type: types.CREATE_POOL_FAILURE,
 });
 
+// Join Pool
+export const joinPoolRequest = () => ({
+	type: types.JOIN_POOL_REQUEST,
+});
+export const joinPoolSuccess = () => ({
+	type: types.JOIN_POOL_SUCCESS,
+});
+export const joinPoolFailure = () => ({
+	type: types.JOIN_POOL_FAILURE,
+});
+
 // Handle Pool Field Changes (e.g. name)
 export const handlePoolFieldChange = (field, value) => ({
 	type: types.HANDLE_POOL_FIELD_CHANGE,
