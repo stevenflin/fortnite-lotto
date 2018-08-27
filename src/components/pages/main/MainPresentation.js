@@ -4,8 +4,12 @@ import '../../../css/Main.css';
 
 import Tables from './Tables';
 import MiniProfile from './MiniProfileContainer';
+import AccessProfile from './AccessPresentation';
 
 export default class Main extends Component {
+  constructor(props){
+    super(props);
+  }
 
   componentDidMount() {
     this.props.fetchActiveUser();
@@ -15,7 +19,7 @@ export default class Main extends Component {
     return (
       <div>
       	<Col md={3}>
-      		<MiniProfile />
+      		<AccessProfile />
       	</Col>
       	<Col md={9}>
         	<Tables />
