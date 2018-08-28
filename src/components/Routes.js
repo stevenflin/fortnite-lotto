@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Router, Route } from 'react-router'; 
+import { Router, Route } from 'react-router';
 
 import history from '../helpers/history';
 
