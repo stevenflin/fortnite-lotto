@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import CreateModal from './CreateModal';
+import CreateModal from './CreateModalPresentation';
 
 import { toggleModal } from '../../../../../redux/actions/uiActions';
 import { handlePoolFieldChange } from '../../../../../redux/actions/poolsActions';

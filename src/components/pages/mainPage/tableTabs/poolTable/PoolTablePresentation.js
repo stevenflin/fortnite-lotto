@@ -5,8 +5,8 @@ import 'react-table/react-table.css';
 
 import { generateColor } from '../../../../../helpers/colors';
 
-import PoolTableButtons from './poolTableButton';
-import NewPoolButton from './newPoolButton';
+import PoolTableButtons from './poolTableButton/PoolTableButtonContainer';
+import NewPoolButton from './newPoolButton/NewPoolButtonContainer';
 
 export default class PoolTable extends Component {
 

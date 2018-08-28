@@ -4,7 +4,7 @@ import { Router, Route } from 'react-router';
 import history from '../helpers/history';
 
 import Navbar from './Navbar';
-import MainPage from './pages/mainPage';
+import MainPage from './pages/mainPage/MainPageContainer';
 
 export default class Routes extends Component {
   render() {

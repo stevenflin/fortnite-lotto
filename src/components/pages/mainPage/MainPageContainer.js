@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { fetchActiveUser } from '../../../redux/asyncActions/usersAsyncActions';
 
-import MainPage from './MainPage';
+import MainPage from './MainPagePresentation';
 
 const mapStateToProps = () => ({});
 

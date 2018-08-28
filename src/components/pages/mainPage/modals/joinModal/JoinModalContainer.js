@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import JoinModal from './JoinModal';
+import JoinModal from './JoinModalPresentation';
 
 import { toggleModal } from '../../../../../redux/actions/uiActions';
 import { joinPool } from '../../../../../redux/asyncActions/poolsAsyncActions';

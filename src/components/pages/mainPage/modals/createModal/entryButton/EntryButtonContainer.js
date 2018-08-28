@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import EntryButton from './EntryButton';
+import EntryButton from './EntryButtonPresentation';
 
 import { handlePoolFieldChange } from '../../../../../../redux/actions/poolsActions';
 

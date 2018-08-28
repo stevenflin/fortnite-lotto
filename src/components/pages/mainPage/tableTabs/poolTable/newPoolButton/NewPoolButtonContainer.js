@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import NewPoolButton from './NewPoolButton';
+import NewPoolButton from './NewPoolButtonPresentation';
 
 import { toggleModal } from '../../../../../../redux/actions/uiActions';
 

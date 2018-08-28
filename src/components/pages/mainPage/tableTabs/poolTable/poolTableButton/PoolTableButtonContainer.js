@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import PoolTableButtons from './PoolTableButton';
+import PoolTableButtons from './PoolTableButtonPresentation';
 
 import { toggleModal, setModalData } from '../../../../../../redux/actions/uiActions';
 

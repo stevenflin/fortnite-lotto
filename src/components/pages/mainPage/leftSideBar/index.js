@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import MiniProfile from './miniProfile';
+import MiniProfile from './miniProfile/MiniProfileContainer';
 import AccessProfile from './accessBar';
 
 export default class LeftSideBar extends Component {
@@ -14,7 +14,7 @@ export default class LeftSideBar extends Component {
 	render() {
 		return (
 			<div>
-			{this.state.userIsLoggedIn ? <MiniProfile /> : <AccessProfile />}
+				{this.state.userIsLoggedIn ? <MiniProfile /> : <AccessProfile />}
 			</div>
 		);
 	}

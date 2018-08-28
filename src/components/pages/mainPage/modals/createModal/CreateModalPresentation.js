@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 
-import EntryButton from './entryButton';
+import EntryButton from './entryButton/EntryButtonContainer';
 
 Modal.setAppElement('#root');
 
