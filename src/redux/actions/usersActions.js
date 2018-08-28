@@ -14,7 +14,6 @@ export const fetchActiveUserFailure = () => ({
 });
 
 // Register Users
-
 export const createUserRequest = () => ({
   type: types.CREATE_USER_REQUEST,
 });

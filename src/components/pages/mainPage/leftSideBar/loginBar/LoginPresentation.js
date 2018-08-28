@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Form, FormGroup, FormControl, Col, Checkbox, Button } from 'react-bootstrap';
 
-export default class Login extends React.Component {
+export default class Login extends Component {
   render(){
     return(
       <Form horizontal>

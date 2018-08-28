@@ -12,7 +12,6 @@ export default class AccessProfile extends Component {
   }
 
   register(e) {
-    console.log("register state", this.state.register);
     e.preventDefault()
     this.setState({
       register: !this.state.register

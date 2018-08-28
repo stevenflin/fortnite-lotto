@@ -18,7 +18,6 @@ export default class MainPage extends Component {
         <Modals />
       	<Col md={3}>
       		<LeftSideBar />
-      		{/* <AccessProfile /> */}
       	</Col>
       	<Col md={9}>
         	<TableTabs />
