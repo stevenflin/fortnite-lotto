@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, FormGroup, FormControl, Col, Checkbox, Button } from 'react-bootstrap';
-import axios from 'axios';
 
 export default class Register extends React.Component {
   constructor(props) {
@@ -13,7 +12,7 @@ export default class Register extends React.Component {
     }
   }
 
-  _clickRegister(e) {
+  clickRegister(e) {
     e.preventDefault()
     fetch('http://localhost:8080/api/auth/register', {
       method: 'POST',
@@ -21,12 +20,7 @@ export default class Register extends React.Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password,
-      passwordconfirm: this.state.passwordconfirm
-    })
+      body: JSON.stringify(this.state)
     })
     .then((res) => {
       if (res.status !== 200) {
@@ -89,7 +83,7 @@ export default class Register extends React.Component {
 
         <FormGroup>
           <Col sm={10}>
-            <Button type="submit" onClick={(e) => this._clickRegister(e)}>Register</Button>
+            <Button type="submit" onClick={(e) => this.clickRegister(e)}>Register</Button>
             {' '}
             <Button type="submit" onClick={(e) => this.props.register(e)} >Back to Login</Button>
           </Col>

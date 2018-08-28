@@ -2,14 +2,10 @@ import React from 'react';
 import { Form, FormGroup, FormControl, Col, Checkbox, Button } from 'react-bootstrap';
 
 export default class Login extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
   render(){
     return(
       <Form horizontal>
-        <FormGroup controlId="formHorizontalEmail">
+        <FormGroup controlId="form-horizontal-email">
           <Col sm={2}>
             Email
           </Col>
@@ -19,7 +15,7 @@ export default class Login extends React.Component {
           </Col>
         </FormGroup>
 
-        <FormGroup controlId="formHorizontalPassword">
+        <FormGroup controlId="form-horizontal-password">
           <Col sm={2}>
             Password
           </Col>

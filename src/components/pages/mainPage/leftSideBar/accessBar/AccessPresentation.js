@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Jumbotron, Button } from 'react-bootstrap';
-import Login from './LoginPresentation.js';
-import Register from './RegisterPresentation.js';
+import Login from '../loginBar';
+import Register from '../registerBar';
 
 export default class AccessProfile extends Component {
   constructor(props){
