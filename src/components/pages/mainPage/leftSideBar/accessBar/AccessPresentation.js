@@ -7,14 +7,14 @@ export default class AccessProfile extends Component {
   constructor(props){
     super(props);
     this.state = {
-      register: false
+      toggleRegister: false
     }
   }
 
-  register(e) {
+  toggleRegisterForm(e) {
     e.preventDefault()
     this.setState({
-      register: !this.state.register
+      toggleRegister: !this.state.toggleRegister
     })
   }
 
@@ -29,7 +29,7 @@ export default class AccessProfile extends Component {
           <p id='access-profile-description'>
             Make money, and have fun!
           </p>
-          {this.state.register ? <Register register={(e) => this.register(e)} /> : <Login register={(e) => this.register(e)} /> }
+          {this.state.toggleRegister ? <Register toggleRegisterForm={(e) => this.toggleRegisterForm(e)} /> : <Login toggleRegisterForm={(e) => this.toggleRegisterForm(e)} /> }
         </Jumbotron>
 			</div>
 		);

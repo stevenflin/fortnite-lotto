@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, FormGroup, FormControl, Col, Checkbox, Button } from 'react-bootstrap';
 
 export default class Login extends Component {
+
   render(){
     return(
       <Form horizontal>
@@ -35,7 +36,7 @@ export default class Login extends Component {
           <Col sm={10}>
             <Button type="submit">Login</Button>
             {' '}
-            <Button onClick={(e) => this.props.register(e)} type="submit">New here?</Button>
+            <Button onClick={(e) => this.props.toggleRegisterForm(e)} type="submit">New here?</Button>
           </Col>
         </FormGroup>
     </Form>

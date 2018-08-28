@@ -32,7 +32,7 @@ export default class Register extends Component {
     })
     .then((resJson) => {
       if (resJson.success) {
-        this.props.register(e);
+        this.props.toggleRegisterForm(e);
       }
     })
     .catch((err) => console.log("Error in registration axios call", err))
@@ -41,7 +41,7 @@ export default class Register extends Component {
   render(){
     return(
       <Form horizontal>
-        <FormGroup controlId="formHorizontalEmail">
+        <FormGroup controlId="form-horizontal-name">
           <Col sm={2}>
             Name
           </Col>
@@ -51,7 +51,7 @@ export default class Register extends Component {
           </Col>
         </FormGroup>
 
-        <FormGroup controlId="formHorizontalEmail">
+        <FormGroup controlId="form-horizontal-email">
           <Col sm={2}>
             Email
           </Col>
@@ -61,7 +61,7 @@ export default class Register extends Component {
           </Col>
         </FormGroup>
 
-        <FormGroup controlId="formHorizontalPassword">
+        <FormGroup controlId="form-horizontal-password">
           <Col sm={2}>
             Password
           </Col>
@@ -71,7 +71,7 @@ export default class Register extends Component {
           </Col>
         </FormGroup>
 
-        <FormGroup controlId="formHorizontalPassword">
+        <FormGroup controlId="form-horizontal-confirm-password">
           <Col sm={4}>
             Confirm Password
           </Col>
@@ -85,7 +85,7 @@ export default class Register extends Component {
           <Col sm={10}>
             <Button type="submit" onClick={(e) => this.clickRegister(e)}>Register</Button>
             {' '}
-            <Button type="submit" onClick={(e) => this.props.register(e)} >Back to Login</Button>
+            <Button type="submit" onClick={(e) => this.props.toggleRegisterForm(e)} >Back to Login</Button>
           </Col>
         </FormGroup>
     </Form>
