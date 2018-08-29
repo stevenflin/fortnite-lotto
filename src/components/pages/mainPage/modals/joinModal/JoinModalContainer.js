@@ -13,8 +13,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	closeModal: () => dispatch(toggleModal('showJoinModal')),
-	joinPool: (record) => {
-		dispatch(joinPool(record));
+	joinPool: (record, entry) => {
+		dispatch(joinPool(record, entry));
 		dispatch(toggleModal('showJoinModal'));
 	},
 });

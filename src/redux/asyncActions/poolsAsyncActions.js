@@ -21,10 +21,11 @@ export const createPool = (userId, pool) => (
 	}
 );
 
-export const joinPool = (record) => (
+// TODO: should this be in recordsAsyncActions?
+export const joinPool = (record, entry) => (
 	dispatch => {
 		dispatch(actions.joinPoolRequest());
-		return axios.post(`${process.env.REACT_APP_API_URL}/records`, { record })
+		return axios.post(`${process.env.REACT_APP_API_URL}/records`, { record, entry })
 		.then(() => dispatch(actions.joinPoolSuccess()))
 		.catch(() => dispatch(actions.joinPoolFailure()));
 	}

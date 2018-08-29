@@ -19,7 +19,7 @@ export default class JoinModal extends Component {
 	joinPool = () => {
 		let userId = this.props.user._id;
 		let poolId = this.props.pool._id;
-		this.props.joinPool({userId, poolId});
+		this.props.joinPool({userId, poolId}, this.props.pool.entry);
 	}
 
 	render() {
