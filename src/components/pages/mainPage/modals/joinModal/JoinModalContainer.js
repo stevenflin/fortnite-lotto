@@ -8,7 +8,7 @@ import { joinPool } from '../../../../../redux/asyncActions/poolsAsyncActions';
 const mapStateToProps = state => ({
 	isOpen: state.ui.main.modals.showJoinModal,
 	pool: state.ui.main.activePool,
-	userId: state.users.activeUser._id,
+	user: state.users.activeUser,
 });
 
 const mapDispatchToProps = dispatch => ({
