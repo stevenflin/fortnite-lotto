@@ -8,7 +8,7 @@ const initialState = {
 		balance: 0,
 		gamesPlayed: 0,
 		wins: 0,
-		activePools: [],
+		activePools: 0,
 	},
 };
 

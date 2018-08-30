@@ -13,6 +13,18 @@ export const fetchPoolsFailure = () => ({
 	type: types.FETCH_POOLS_FAILURE,
 });
 
+// Fetch Active User Pools
+export const fetchActiveUserPoolsRequest = () => ({
+	type: types.FETCH_ACTIVE_USER_POOLS_REQUEST,
+});
+export const fetchActiveUserPoolsSuccess = (pools) => ({
+	type: types.FETCH_ACTIVE_USER_POOLS_SUCCESS,
+	payload: { pools },
+});
+export const fetchActiveUserPoolsFailure = () => ({
+	type: types.FETCH_ACTIVE_USER_POOLS_FAILURE,
+});
+
 // Create Pool
 export const createPoolRequest = () => ({
 	type: types.CREATE_POOL_REQUEST,

@@ -29,11 +29,7 @@ export default class PoolTable extends Component {
               Header: 'Entry',
               id: 'entry',
               accessor: d => d.entry,
-              Cell: row => (
-                <div style={{color: generateColor(row.value)}}>
-                  <strong>{row.value}</strong>
-                </div>
-              ),
+              Cell: row => <div style={{color: generateColor(row.value)}}>{row.value}</div>,
               filterMethod: (filter, row, column) => parseInt(filter.value) === row.entry,
             },
             {

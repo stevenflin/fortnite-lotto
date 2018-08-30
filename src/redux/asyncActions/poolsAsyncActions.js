@@ -12,6 +12,16 @@ export const fetchPools = () => (
 	}
 );
 
+export const fetchActiveUserPools = (userId) => (
+	dispatch => {
+		dispatch(actions.fetchActiveUserPoolsRequest());
+		return axios.get(`${process.env.REACT_APP_API_URL}/users/${userId}/pools`)
+		.then(resp => resp.data)
+		.then(payload => dispatch(actions.fetchActiveUserPoolsSuccess(payload.pools)))
+		.catch(() => dispatch(actions.fetchActiveUserPoolsFailure()));
+	}
+);
+
 export const createPool = (userId, pool) => (
 	dispatch => {
 		dispatch(actions.createPoolRequest());

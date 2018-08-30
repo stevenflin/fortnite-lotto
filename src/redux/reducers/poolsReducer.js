@@ -2,12 +2,15 @@ import * as types from '../actionTypes/poolsActionTypes';
 
 const initialState = {
 	isFetchingPools: false,
+	isFetchingActiveUserPools: false,
 	isCreatingPool: false,
 	isJoiningPool: false,
 	errorFetchingPools: false,
+	errorFetchingActiveUserPools: false,
 	errorCreatingPool: false,
 	errorJoiningPool: false,
 	list: [],
+	activeUserPools: [],
 	pool: {
 		name: '',
 		entry: 1,
@@ -24,6 +27,13 @@ export default (state = initialState, action) => {
 			return {...state, isFetchingPools: false, list: action.payload.pools};
 		case types.FETCH_POOLS_FAILURE:
 			return {...state, isFetchingPools: false, errorFetchingPools: true};
+
+		case types.FETCH_ACTIVE_USER_POOLS_REQUEST:
+			return {...state, isFetchingActiveUserPools: true};
+		case types.FETCH_ACTIVE_USER_POOLS_SUCCESS:
+			return {...state, isFetchingActiveUserPools: false, activeUserPools: action.payload.pools};
+		case types.FETCH_ACTIVE_USER_POOLS_FAILURE:
+			return {...state, isFetchingActiveUserPools: false, errorFetchingActiveUserPools: true};
 
 		case types.CREATE_POOL_REQUEST:
 			return {...state, isCreatingPool: true};

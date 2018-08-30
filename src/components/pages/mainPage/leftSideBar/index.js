@@ -14,7 +14,8 @@ export default class LeftSideBar extends Component {
 	render() {
 		return (
 			<div>
-				{this.state.userIsLoggedIn ? <MiniProfile /> : <AccessProfile />}
+				<MiniProfile />
+				{/* {this.state.userIsLoggedIn ? <MiniProfile /> : <AccessProfile />} */}
 			</div>
 		);
 	}
