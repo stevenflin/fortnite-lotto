@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import * as actions from '../actions/poolsActions';
+import { fetchActiveUser } from '../asyncActions/usersAsyncActions';
 
 export const fetchPools = () => (
 	dispatch => {
@@ -23,20 +24,29 @@ export const fetchActiveUserPools = (userId) => (
 );
 
 export const createPool = (userId, pool) => (
-	dispatch => {
+	async dispatch => {
 		dispatch(actions.createPoolRequest());
-		return axios.post(`${process.env.REACT_APP_API_URL}/pools`, { userId, pool })
-		.then(() => dispatch(actions.createPoolSuccess()))
-		.catch(() => dispatch(actions.createPoolFailure()));
+		try {
+			await axios.post(`${process.env.REACT_APP_API_URL}/pools`, { userId, pool })
+			dispatch(actions.createPoolSuccess());
+			dispatch(fetchPools());
+		} catch (e) {
+			dispatch(actions.createPoolFailure());
+		}
 	}
 );
 
 // TODO: should this be in recordsAsyncActions?
 export const joinPool = (record, entry) => (
-	dispatch => {
+	async dispatch => {
 		dispatch(actions.joinPoolRequest());
-		return axios.post(`${process.env.REACT_APP_API_URL}/records`, { record, entry })
-		.then(() => dispatch(actions.joinPoolSuccess()))
-		.catch(() => dispatch(actions.joinPoolFailure()));
+		try {
+			await axios.post(`${process.env.REACT_APP_API_URL}/records`, { record, entry });
+			dispatch(actions.joinPoolSuccess());
+			dispatch(fetchPools());
+			dispatch(fetchActiveUser());
+		} catch (e) {
+			dispatch(actions.joinPoolFailure());
+		}
 	}
 );
