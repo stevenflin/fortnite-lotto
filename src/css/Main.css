@@ -178,35 +178,35 @@ input:focus {
 }
 
 #entry-btn-1 {
-  color: blue;
-  border: 1px solid blue;
-}
-
-#entry-btn-1-selected {
-  color: white;
-  border: 1px solid blue;
-  background-color: blue;
-}
-
-#entry-btn-1:hover {
-  color: white;
-  background-color: blue;
-}
-
-#entry-btn-10 {
   color: green;
   border: 1px solid green;
 }
 
-#entry-btn-10-selected {
+#entry-btn-1-selected {
   color: white;
   border: 1px solid green;
   background-color: green;
 }
 
-#entry-btn-10:hover {
+#entry-btn-1:hover {
   color: white;
   background-color: green;
+}
+
+#entry-btn-10 {
+  color: blue;
+  border: 1px solid blue;
+}
+
+#entry-btn-10-selected {
+  color: white;
+  border: 1px solid blue;
+  background-color: blue;
+}
+
+#entry-btn-10:hover {
+  color: white;
+  background-color: blue;
 }
 
 #entry-btn-100 {
