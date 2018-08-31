@@ -2,19 +2,31 @@ import React, { Component } from 'react';
 import { Jumbotron, Button } from 'react-bootstrap';
 import Login from '../loginBar';
 import Register from '../registerBar';
+import AccessButtons from './AccessButtons'
 
 export default class AccessProfile extends Component {
   constructor(props){
     super(props);
     this.state = {
-      toggleRegister: false
+      toggleRegister: false,
+      toggleSignIn: false,
+      toggleAccess: true
     }
   }
 
   toggleRegisterForm(e) {
     e.preventDefault()
     this.setState({
-      toggleRegister: !this.state.toggleRegister
+      toggleRegister: !this.state.toggleRegister,
+      toggleAccess: !this.state.toggleAccess
+    })
+  }
+
+  toggleSignIn(e) {
+    e.preventDefault()
+    this.setState({
+      toggleSignIn: !this.state.toggleSignIn,
+      toggleAccess: !this.state.toggleAccess
     })
   }
 
@@ -29,7 +41,9 @@ export default class AccessProfile extends Component {
           <p id='access-profile-description'>
             Make money, and have fun!
           </p>
-          {this.state.toggleRegister ? <Register toggleRegisterForm={(e) => this.toggleRegisterForm(e)} /> : <Login toggleRegisterForm={(e) => this.toggleRegisterForm(e)} /> }
+          {this.state.toggleAccess ? <AccessButtons toggleSignIn={(e) => this.toggleSignIn(e)} toggleRegisterForm={(e) => this.toggleRegisterForm(e)} /> : null}
+          {this.state.toggleRegister ? <Register toggleRegisterForm={(e) => this.toggleRegisterForm(e)} /> : null }
+          {this.state.toggleSignIn ? <Login toggleSignIn={(e) => this.toggleSignIn(e)} /> : null }
         </Jumbotron>
 			</div>
 		);

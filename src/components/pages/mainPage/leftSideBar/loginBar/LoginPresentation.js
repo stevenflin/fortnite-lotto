@@ -1,42 +1,29 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, FormControl, Col, Checkbox, Button } from 'react-bootstrap';
+import LoginOptions from './LoginOptions';
+import ManualLogin from './ManualLogin'
 
 export default class Login extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      manualLogin: false
+    }
+  }
+
+  manualLogin(e){
+    e.preventDefault()
+    this.setState({
+      manualLogin: !this.state.manualLogin
+    })
+  }
 
   render(){
     return(
       <Form horizontal>
-        <FormGroup controlId="form-horizontal-email">
-          <Col sm={2}>
-            Email
-          </Col>
-          <br />
-          <Col sm={10}>
-            <FormControl type="email" placeholder="Email" />
-          </Col>
-        </FormGroup>
-
-        <FormGroup controlId="form-horizontal-password">
-          <Col sm={2}>
-            Password
-          </Col>
-          <br />
-          <Col sm={10}>
-            <FormControl type="password" placeholder="Password" />
-          </Col>
-        </FormGroup>
-
         <FormGroup>
           <Col sm={10}>
-            <Checkbox>Remember me</Checkbox>
-          </Col>
-        </FormGroup>
-
-        <FormGroup>
-          <Col sm={10}>
-            <Button type="submit">Login</Button>
-            {' '}
-            <Button onClick={(e) => this.props.toggleRegisterForm(e)} type="submit">New here?</Button>
+            {this.state.manualLogin ? <ManualLogin toggleManualLogIn={(e) => this.manualLogin(e)} /> : <LoginOptions toggleManualLogIn={(e) => this.manualLogin(e)} toggleSignIn={(e) => this.props.toggleSignIn(e)} />}
           </Col>
         </FormGroup>
     </Form>
