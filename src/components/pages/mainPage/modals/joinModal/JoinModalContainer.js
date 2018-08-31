@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import JoinModal from './JoinModalPresentation';
 
 import { toggleModal } from '../../../../../redux/actions/uiActions';
-import { joinPool } from '../../../../../redux/asyncActions/poolsAsyncActions';
+import { joinPool, fetchPools } from '../../../../../redux/asyncActions/poolsAsyncActions';
 
 const mapStateToProps = state => ({
 	isOpen: state.ui.main.modals.showJoinModal,
@@ -13,8 +13,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	closeModal: () => dispatch(toggleModal('showJoinModal')),
-	joinPool: (record, entry) => {
-		dispatch(joinPool(record, entry));
+	joinPool: async (record, entry) => {
+		await dispatch(joinPool(record, entry));
+		await dispatch(fetchPools(record.userId));
 		dispatch(toggleModal('showJoinModal'));
 	},
 });

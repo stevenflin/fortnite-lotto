@@ -4,7 +4,9 @@ import { fetchActiveUser } from '../../../redux/asyncActions/usersAsyncActions';
 
 import MainPage from './MainPagePresentation';
 
-const mapStateToProps = () => ({});
+const mapStateToProps = state => ({
+  isFetching: state.users.isFetchingActiveUser,
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchActiveUser: () => dispatch(fetchActiveUser()),

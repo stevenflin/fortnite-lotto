@@ -20,7 +20,8 @@ export default class MainPage extends Component {
       		<LeftSideBar />
       	</Col>
       	<Col md={9}>
-        	<TableTabs />
+          {/* TODO: this is a temp fix to load data, but there is an error in the console */}
+        	{!this.props.isFetching && <TableTabs />}
         </Col>
       </div>
     );

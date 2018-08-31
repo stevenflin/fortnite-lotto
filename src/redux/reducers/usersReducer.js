@@ -4,6 +4,7 @@ const initialState = {
 	isFetchingActiveUser: false,
 	errorFetchingActiveUser: false,
 	activeUser: {
+		_id: '',
 		name: '',
 		balance: 0,
 		gamesPlayed: 0,

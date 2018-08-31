@@ -4,7 +4,7 @@ import CreateModal from './CreateModalPresentation';
 
 import { toggleModal } from '../../../../../redux/actions/uiActions';
 import { handlePoolFieldChange } from '../../../../../redux/actions/poolsActions';
-import { createPool } from '../../../../../redux/asyncActions/poolsAsyncActions';
+import { createPool, fetchPools } from '../../../../../redux/asyncActions/poolsAsyncActions';
 
 const mapStateToProps = state => ({
 	isOpen: state.ui.main.modals.showCreateModal,
@@ -14,8 +14,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	closeModal: () => dispatch(toggleModal('showCreateModal')),
-	createPool: (userId, pool) => {
-		dispatch(createPool(userId, pool));
+	createPool: async (userId, pool) => {
+		await dispatch(createPool(userId, pool));
+		await dispatch(fetchPools(userId));
 		dispatch(toggleModal('showCreateModal'));
 	},
 	handlePoolNameChange: (value) => dispatch(handlePoolFieldChange('name', value)),

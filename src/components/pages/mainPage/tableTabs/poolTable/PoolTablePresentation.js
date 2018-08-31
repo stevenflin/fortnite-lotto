@@ -11,7 +11,7 @@ import NewPoolButton from './newPoolButton/NewPoolButtonContainer';
 export default class PoolTable extends Component {
 
 	componentDidMount() {
-		this.props.fetchPools();
+		this.props.fetchPools(this.props.userId);
 	}
 
 	render() {
